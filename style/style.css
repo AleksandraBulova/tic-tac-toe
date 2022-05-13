@@ -1,0 +1,49 @@
+.wrapper {
+  padding: 10px 100px;
+  
+  /*#22272e*/
+  background-color: #373e47;
+}
+
+/* HEADER */
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo_flex {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.logo {
+  height: 60px;
+}
+
+h1 {
+  margin: 0;
+
+  font-family: 'Work Sans', sans-serif;
+  font-size: 40px;
+}
+
+.button__settings {
+  height: 44px;
+  width: 120px;
+
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  background-color: #000;
+
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  color: #373e47;
+}
+
+.button__settings:hover {
+  color: #fff;
+}
