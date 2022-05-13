@@ -8,30 +8,36 @@
   <title>Tic-Tac-Toe</title>
 </head>
 <body>
-  <header>
-    <img src="" alt="">
-    <h1></h1>
-    <button></button>
-  </header>
-  <main>
-    <div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </main>
-  <footer>
-    <div>
-      <a href=""><img src="" alt=""></a>
-      <p></p>
-      <a href=""><img src="" alt=""></a>
-    </div>
-  </footer>
+  <div class="wrapper">
+    <header>
+      <div class="menu">
+        <div class="logo_flex">
+          <img src="./image/logo.png" alt="logo" class="logo">
+          <h1>Tic Tac Toe</h1>
+        </div>
+        <button class="button__settings">Settings</button>
+      </div>
+    </header>
+    <main>
+      <div class="playing-field">
+        <div id="cell-1" class="playing-field_cell">X</div>
+        <div id="cell-2" class="playing-field_cell">O</div>
+        <div id="cell-3" class="playing-field_cell">X</div>
+        <div id="cell-4" class="playing-field_cell">O</div>
+        <div id="cell-5" class="playing-field_cell">X</div>
+        <div id="cell-6" class="playing-field_cell">O</div>
+        <div id="cell-7" class="playing-field_cell">X</div>
+        <div id="cell-8" class="playing-field_cell">O</div>
+        <div id="cell-9" class="playing-field_cell">X</div>
+      </div>
+    </main>
+    <footer>
+      <div class="information">
+        <a href="https://rs.school/js/" target="_blank"><img src="./image/rs_school.svg" alt="rs-school" class="information__rs-school"></a>
+        <p class="information__year">2022</p>
+        <a href="https://github.com/AleksandraBulova" target="_blank"><img src="./image/GitHub.png" alt="GitHub" class="information__github"></a>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
