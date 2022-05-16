@@ -1,6 +1,12 @@
 const cell = document.querySelectorAll('.playing-field_cell')
+const playingField = document.querySelectorAll('.playing-field')
+const win = document.querySelector('.window-win')
+const playerWin = document.querySelector('.player-win')
+const numberMoves = document.querySelector('.number-moves')
+const windowWinButton = document.querySelector('.window-win__button')
 let thisX = true
-const arr = [
+let count = 0;
+let arr = [
   [],
   [],
   []
@@ -8,6 +14,7 @@ const arr = [
 
 for (let i = 0; i < cell.length; i++) {
   cell[i].addEventListener('click', function(event) {
+    count++
     const cellElement = event.path.find(el => el.className === 'playing-field_cell')
     const cellId = event.target.id
     const fillArr = () => {
@@ -22,21 +29,31 @@ for (let i = 0; i < cell.length; i++) {
       }
     }
 
+    const textWindowWin = () => {
+      thisX === true ? playerWin.innerHTML = `Player ${'0'} win!` : playerWin.innerHTML = `Player ${'X'} win!`
+      numberMoves.innerHTML = `Number of moves: ${count}`
+    }
+
     const victoryCheck = () => {
       if(arr[0][0] === arr[0][1] && arr[0][1] === arr[0][2] && arr[0][0] && arr[0][1] && arr[0][2] ) {
-        return 'win'
+        textWindowWin()
+        return win.classList.toggle('active')
       }
       if(arr[1][0] === arr[1][1] && arr[1][1] === arr[1][2] && arr[1][0] && arr[1][1] && arr[1][2]) {
-        return 'win'
+        textWindowWin()
+        return win.classList.toggle('active')
       }
       if(arr[2][0] === arr[2][1] && arr[2][1] === arr[2][2] && arr[2][0] && arr[2][1] && arr[2][2]) {
-        return 'win'
+        textWindowWin()
+        return win.classList.toggle('active')
       }
       if(arr[0][0] === arr[1][1] && arr[1][1] === arr[2][2] && arr[0][0] && arr[1][1] && arr[2][2]) {
-        return 'win'
+        textWindowWin()
+        return win.classList.toggle('active')
       }
       if(arr[0][2] === arr[1][1] && arr[1][1]  === arr[2][0] && arr[0][2] && arr[1][1] && arr[2][0]) {
-        return 'win'
+        textWindowWin()
+        return win.classList.toggle('active')
       }
     }
 
@@ -51,5 +68,17 @@ for (let i = 0; i < cell.length; i++) {
       fillArr()
       victoryCheck()
     }
+
+    windowWinButton.addEventListener('click', function(event) {
+      thisX = true
+      count = 0;
+      arr = [
+        [],
+        [],
+        []
+      ]
+      cellElement.innerHTML = ''
+      win.classList.remove('active')
+    })
   })
 }
