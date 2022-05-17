@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if(theme === 'light') {
       document.body.classList.add('theme')
     }
-
     if(theme === 'dark') {
       document.body.classList.remove('theme')
     }
@@ -26,12 +25,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   const cell = document.querySelectorAll('.playing-field_cell')
   let thisX = true
-  let count = 0;
-  let arr = [
+  let count = 0
+  let arrWin = [
     [],
     [],
     []
-  ]
+  ] 
+
+  let arrStatistics = []
 
   for (let i = 0; i < cell.length; i++) {
     cell[i].addEventListener('click', function(event) {
@@ -41,13 +42,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
       const cellId = event.target.id
       const fillArr = () => {
         if(cellId === '1' || cellId === '2'|| cellId === '3'){
-          arr[0][cellId - 1] = cellElement.innerHTML
+          arrWin[0][cellId - 1] = cellElement.innerHTML
         }
         if(cellId === '4' || cellId === '5'|| cellId === '6'){
-          arr[1][cellId - 4] = cellElement.innerHTML
+          arrWin[1][cellId - 4] = cellElement.innerHTML
         }
         if(cellId === '7' || cellId === '8'|| cellId === '9'){
-          arr[2][cellId - 7] = cellElement.innerHTML
+          arrWin[2][cellId - 7] = cellElement.innerHTML
         }
       }
 
@@ -62,39 +63,40 @@ document.addEventListener("DOMContentLoaded", function(event) {
       const win = document.querySelector('.window-win')
 
       const victoryCheck = () => {
-        if(arr[0][0] === arr[0][1] && arr[0][1] === arr[0][2] && arr[0][0] && arr[0][1] && arr[0][2] ) {
+        if(arrWin[0][0] === arrWin[0][1] && arrWin[0][1] === arrWin[0][2] && arrWin[0][0] && arrWin[0][1] && arrWin[0][2] ) {
           textWindowWin()
           return win.classList.toggle('active')
         }
-        if(arr[1][0] === arr[1][1] && arr[1][1] === arr[1][2] && arr[1][0] && arr[1][1] && arr[1][2]) {
+        if(arrWin[1][0] === arrWin[1][1] && arrWin[1][1] === arrWin[1][2] && arrWin[1][0] && arrWin[1][1] && arrWin[1][2]) {
           textWindowWin()
           return win.classList.toggle('active')
         }
-        if(arr[2][0] === arr[2][1] && arr[2][1] === arr[2][2] && arr[2][0] && arr[2][1] && arr[2][2]) {
+        if(arrWin[2][0] === arrWin[2][1] && arrWin[2][1] === arrWin[2][2] && arrWin[2][0] && arrWin[2][1] && arrWin[2][2]) {
           textWindowWin()
           return win.classList.toggle('active')
         }
-        if(arr[0][0] === arr[1][0] && arr[1][0] === arr[2][0] && arr[0][0] && arr[1][0] && arr[2][0] ) {
+        if(arrWin[0][0] === arrWin[1][0] && arrWin[1][0] === arrWin[2][0] && arrWin[0][0] && arrWin[1][0] && arrWin[2][0] ) {
           textWindowWin()
           return win.classList.toggle('active')
         }
-        if(arr[0][1] === arr[1][1] && arr[1][1] === arr[2][1] && arr[0][1] && arr[1][1] && arr[2][1]) {
+        if(arrWin[0][1] === arrWin[1][1] && arrWin[1][1] === arrWin[2][1] && arrWin[0][1] && arrWin[1][1] && arrWin[2][1]) {
           textWindowWin()
           return win.classList.toggle('active')
         }
-        if(arr[0][2] === arr[1][2] && arr[1][2] === arr[2][2] && arr[0][2] && arr[1][2] && arr[2][2]) {
+        if(arrWin[0][2] === arrWin[1][2] && arrWin[1][2] === arrWin[2][2] && arrWin[0][2] && arrWin[1][2] && arrWin[2][2]) {
           textWindowWin()
           return win.classList.toggle('active')
         }
-        if(arr[0][0] === arr[1][1] && arr[1][1] === arr[2][2] && arr[0][0] && arr[1][1] && arr[2][2]) {
+        if(arrWin[0][0] === arrWin[1][1] && arrWin[1][1] === arrWin[2][2] && arrWin[0][0] && arrWin[1][1] && arrWin[2][2]) {
           textWindowWin()
           return win.classList.toggle('active')
         }
-        if(arr[0][2] === arr[1][1] && arr[1][1]  === arr[2][0] && arr[0][2] && arr[1][1] && arr[2][0]) {
+        if(arrWin[0][2] === arrWin[1][1] && arrWin[1][1]  === arrWin[2][0] && arrWin[0][2] && arrWin[1][1] && arrWin[2][0]) {
           textWindowWin()
           return win.classList.toggle('active')
         }
-        if(arr[0][0] && arr[0][1] && arr[0][2] && arr[1][0] && arr[1][1] && arr[1][2] && arr[2][0] && arr[2][1] && arr[2][2]) {
+        if(arrWin[0][0] && arrWin[0][1] && arrWin[0][2] && arrWin[1][0] && arrWin[1][1] && arrWin[1][2] && 
+          arrWin[2][0] && arrWin[2][1] && arrWin[2][2]) {
           playerWin.innerHTML = `Draw!` 
           numberMoves.innerHTML = `Number of moves: ${count}`
           return win.classList.toggle('active')
@@ -115,8 +117,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
       const newGame = () =>{
         thisX = true
-        count = 0;
-        arr = [
+        count = 0
+        arrWin = [
           [],
           [],
           []
@@ -149,5 +151,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
       localStorage.setItem('theme', 'dark')
     }
   })
-  
-});
+
+})
