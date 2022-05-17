@@ -57,6 +57,8 @@ h1 {
   justify-content: center;
   align-items: center;
 
+  position: relative;
+
   height: calc(100vh - 60px - 54px - 20px);;
 }
 
@@ -143,6 +145,39 @@ h1 {
   display: flex;
 }
 
+/* Section: SETTINGS */
+
+.settings {
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  position: absolute;
+  top: 110px;
+  right: 95px;
+
+  width: 130px;
+  height: 130px;
+
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  background-color: #000;
+}
+
+.settings_text {
+  font: bold 15px 'Work Sans', sans-serif;
+  color: #373e47;
+}
+
+.settings_text:hover {
+  color: #fff;
+}
+
+.settings.active {
+  display: flex;
+}
 
 /* FOOTER */
 
@@ -237,6 +272,19 @@ h1 {
     font-size: 18px;
   }
 
+  /* Section: SETTINGS */
+
+  .settings {
+    right: 65px;
+
+    width: 110px;
+    height: 110px;
+  }
+
+  .settings_text {
+    font-size: 14px;
+  }
+
   /* FOOTER */
 
   .information__rs-school,
@@ -285,6 +333,20 @@ h1 {
 
   .game {
     height: calc(100vh - 30px - 39px - 20px);;
+  }
+
+  /* Section: SETTINGS */
+
+  .settings {
+    top: 90px;
+    right: 37px;
+
+    width: 95px;
+    height: 95px;
+  }
+
+  .settings_text {
+    font-size: 11px;
   }
 
   /* FOOTER */

@@ -1,9 +1,18 @@
+const buttonSettings = document.querySelector('.button__settings')
+const settings = document.querySelector('.settings')
+
+buttonSettings.addEventListener('click', function() {
+  settings.classList.toggle('active')
+})
+
+document.addEventListener('click', function(event) {
+  if( event.target.className !== 'button__settings' && event.target.className !== 'settings active' &&
+  event.target.className !== 'restart settings_text' && event.target.className !== 'change settings_text') {
+    settings.classList.remove('active')
+  }
+})
+
 const cell = document.querySelectorAll('.playing-field_cell')
-const playingField = document.querySelectorAll('.playing-field')
-const win = document.querySelector('.window-win')
-const playerWin = document.querySelector('.player-win')
-const numberMoves = document.querySelector('.number-moves')
-const windowWinButton = document.querySelector('.window-win__button')
 let thisX = true
 let count = 0;
 let arr = [
@@ -15,7 +24,8 @@ let arr = [
 for (let i = 0; i < cell.length; i++) {
   cell[i].addEventListener('click', function(event) {
     count++
-    const cellElement = event.path.find(el => el.className === 'playing-field_cell')
+
+    const cellElement = event.composedPath().find(el => el.className === 'playing-field_cell')
     const cellId = event.target.id
     const fillArr = () => {
       if(cellId === '1' || cellId === '2'|| cellId === '3'){
@@ -29,10 +39,15 @@ for (let i = 0; i < cell.length; i++) {
       }
     }
 
+    const playerWin = document.querySelector('.player-win')
+    const numberMoves = document.querySelector('.number-moves')
+
     const textWindowWin = () => {
       thisX === true ? playerWin.innerHTML = `Player '${'0'}' win!` : playerWin.innerHTML = `Player '${'X'}' win!`
       numberMoves.innerHTML = `Number of moves: ${count}`
     }
+
+    const win = document.querySelector('.window-win')
 
     const victoryCheck = () => {
       if(arr[0][0] === arr[0][1] && arr[0][1] === arr[0][2] && arr[0][0] && arr[0][1] && arr[0][2] ) {
@@ -86,7 +101,7 @@ for (let i = 0; i < cell.length; i++) {
       victoryCheck()
     }
 
-    windowWinButton.addEventListener('click', function(event) {
+    const newGame = () =>{
       thisX = true
       count = 0;
       arr = [
@@ -95,7 +110,21 @@ for (let i = 0; i < cell.length; i++) {
         []
       ]
       cellElement.innerHTML = ''
+    }
+
+    const windowWinButton = document.querySelector('.window-win__button')
+
+    windowWinButton.addEventListener('click', function() {
+      newGame()
       win.classList.remove('active')
+    })
+
+    const restartGame = document.querySelector('.restart')
+
+    restartGame.addEventListener('click', function() {
+      newGame()
     })
   })
 }
+
+
