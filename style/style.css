@@ -1,10 +1,10 @@
 .wrapper {
   padding: 10px 100px;
+
   height: 100vh;
   width: 100vw;
   box-sizing: border-box;
-  
-  /*#22272e*/
+
   background-color: #373e47;
 }
 
@@ -162,4 +162,140 @@ h1 {
   margin: 0;
 
   font: bold 24px 'Work Sans', sans-serif;
+}
+
+
+/* MEDIA 700px */
+
+@media screen and (max-width: 700px) {
+
+  .wrapper {
+    padding: 10px 75px;
+  }
+ 
+  /* HEADER */
+
+  .logo_flex {
+    gap: 40px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .button__settings {
+    height: 35px;
+    width: 90px;
+
+    font-size: 14px;
+  }
+
+  /* MAIN */
+  /* Section: GAME */
+
+  .game {
+    height: calc(100vh - 40px - 49px - 20px);;
+  }
+
+  .playing-field {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .playing-field_cell {
+    width: 50px;
+    height: 50px;
+
+    font-size: 20px;
+  }
+
+  /* MAIN */
+  /* Section: GAME */
+  /* Win block */
+
+  .window-win {
+    width: 200px;
+    height: 160px;
+  }
+  
+  .player-win {
+    font-size: 26px;
+  }
+  
+  .number-moves {
+    font-size: 16px;
+  }
+  
+  .window-win__button {
+    height: 35px;
+    width: 90px;
+  
+    font-size: 18px;
+  }
+
+  /* FOOTER */
+
+  .information__rs-school,
+  .information__github {
+    height: 45px;
+    width: 110px;
+  }
+
+  .information__year {
+    font-size: 18px;
+  }
+}
+
+
+/* MEDIA 500px */
+
+@media screen and (max-width: 500px) {
+
+  .wrapper {
+    padding: 10px 50px;
+  }
+ 
+  /* HEADER */
+
+  .logo_flex {
+    gap: 30px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  h1 {
+    font-size: 19px;
+  }
+
+  .button__settings {
+    height: 28px;
+    width: 70px;
+
+    font-size: 11px;
+  }
+
+  /* MAIN */
+  /* Section: GAME */
+
+  .game {
+    height: calc(100vh - 30px - 39px - 20px);;
+  }
+
+  /* FOOTER */
+
+  .information__rs-school,
+  .information__github {
+    height: 35px;
+    width: 80px;
+  }
+
+  .information__year {
+    font-size: 18px;
+  }
 }
