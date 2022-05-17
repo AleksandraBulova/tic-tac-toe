@@ -8,6 +8,10 @@
   background-color: #373e47;
 }
 
+body.theme .wrapper {
+  background-color: #F5DEB3;
+}
+
 /* HEADER */
 
 .menu {
@@ -47,6 +51,17 @@ h1 {
 
 .button__settings:hover {
   color: #fff;
+}
+
+body.theme .button__settings {
+  background-color: #F5DEB3;
+  border: 2px solid #000;
+  color: #000;
+}
+
+body.theme .button__settings:hover {
+  border: 2px solid #DEB887;
+  color: #D2B48C;
 }
 
 /* MAIN */
@@ -91,6 +106,12 @@ h1 {
   opacity: 0.6;
 }
 
+body.theme .playing-field_cell {
+  background-color: #D2B48C;
+  border: 1px solid #fff;
+  color: #000;
+}
+
 /* MAIN */
 /* Section: GAME */
 /* Win block */
@@ -110,6 +131,11 @@ h1 {
   border: 3px solid #22272e;
   box-sizing: border-box;
   border-radius: 10px;
+}
+
+body.theme .window-win {
+  background-color: #D2B48C;
+  border: 5px solid #fff;
 }
 
 .player-win {
@@ -139,6 +165,17 @@ h1 {
 
 .window-win__button:hover {
   color: #fff;
+}
+
+body.theme .window-win__button {
+  background-color: #F5DEB3;
+  border: 2px solid #000;
+  color: #000;
+}
+
+body.theme .window-win__button:hover {
+  border: 2px solid #DEB887;
+  color: #D2B48C;
 }
 
 .window-win.active {
@@ -173,6 +210,19 @@ h1 {
 
 .settings_text:hover {
   color: #fff;
+}
+
+body.theme .settings {
+  background-color: #F5DEB3;
+  border: 2px solid #000;
+}
+
+body.theme .settings_text {
+  color: #000;
+}
+
+body.theme .settings_text:hover  {
+  color: #D2B48C;
 }
 
 .settings.active {

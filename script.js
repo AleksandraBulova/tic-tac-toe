@@ -127,4 +127,8 @@ for (let i = 0; i < cell.length; i++) {
   })
 }
 
+const changeTheme = document.querySelector('.change')
 
+changeTheme.addEventListener('click', function() {
+  document.body.classList.toggle('theme')
+})
