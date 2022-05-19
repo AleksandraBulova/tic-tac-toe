@@ -229,6 +229,92 @@ body.theme .settings_text:hover  {
   display: flex;
 }
 
+/* Section: STATISTICS*/
+
+.statistics {
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 5px;
+
+  padding: 20px;
+
+  position: absolute;
+
+  width: 320px;
+  height: 295px;
+
+  border: none;
+  border-radius: 25px;
+  background-color: #000;
+}
+
+.statistics_flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statistics h2 {
+  margin: 0;
+
+  font: 500 20px 'Work Sans', sans-serif;
+  color: #fff;
+}
+
+.statistics__close {
+  width: 50px;
+  height: 35px;
+
+  border-radius: 25px;
+  background-color: #000;
+  border: 2px solid #fff;
+  cursor: pointer;
+
+  font: 700 16px 'Work Sans', sans-serif;
+  color: #fff;
+}
+
+.statistics__close:hover {
+  border: 2px solid #373e47;
+  color: #373e47;
+}
+
+.statistics__list {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  font: 400 16px 'Work Sans', sans-serif;
+  color: #fff;
+}
+
+body.theme .statistics {
+  background-color: #F5DEB3;
+  border: 2px solid #000;
+}
+
+body.theme .statistics h2,
+body.theme .statistics__list {
+  color: #000;
+}
+
+body.theme .statistics__close {
+  background-color: #F5DEB3;
+  border: 2px solid #000;
+  color: #000;
+}
+
+body.theme .statistics__close:hover {
+  border: 2px solid #D2B48C;
+  color: #D2B48C;
+}
+
+.statistics.active {
+  display: flex;
+}
+
 /* FOOTER */
 
 .information {
@@ -249,10 +335,24 @@ body.theme .settings_text:hover  {
   font: bold 24px 'Work Sans', sans-serif;
 }
 
+/* MEDIA 825px */
 
-/* MEDIA 700px */
+@media screen and (max-width: 825px) {
 
-@media screen and (max-width: 700px) {
+  .settings {
+    width: 125px;
+  }
+
+  .statistics {
+    width: 253px;
+    height: 295px;
+  }
+}
+
+
+/* MEDIA 750px */
+
+@media screen and (max-width: 750px) {
 
   .wrapper {
     padding: 10px 75px;
@@ -348,10 +448,29 @@ body.theme .settings_text:hover  {
   }
 }
 
+/* MEDIA 650px */
 
-/* MEDIA 500px */
+@media screen and (max-width: 650px) {
 
-@media screen and (max-width: 500px) {
+  .settings {
+    height: 90px;
+  }
+
+  .statistics {
+    width: 145px;
+    height: 250px;
+  }
+
+  .statistics h2, 
+  .statistics__list {
+    font-size: 15px;
+  }
+}
+
+
+/* MEDIA 550px */
+
+@media screen and (max-width: 550px) {
 
   .wrapper {
     padding: 10px 50px;
