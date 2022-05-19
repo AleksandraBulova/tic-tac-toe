@@ -33,10 +33,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
     []
   ] 
 
+  localStorage.clear();
+  
+
+
   let arrStatistics = []
   let historyLocalStorage = JSON.parse(localStorage.getItem('win'))
+  console.log(historyLocalStorage)
 
-  if(historyLocalStorage.length === null) {
+  if(historyLocalStorage !== null) {
     for(let i = 0; i < historyLocalStorage.length; i++){
       arrStatistics.push(historyLocalStorage[i])
       if (historyLocalStorage[i] === 'X'){
