@@ -33,13 +33,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     []
   ] 
 
-  localStorage.clear();
-  
-
-
   let arrStatistics = []
   let historyLocalStorage = JSON.parse(localStorage.getItem('win'))
-  console.log(historyLocalStorage)
 
   if(historyLocalStorage !== null) {
     for(let i = 0; i < historyLocalStorage.length; i++){
@@ -55,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     }
   }
-
 
   for (let i = 0; i < cell.length; i++) {
     cell[i].addEventListener('click', function(event) {
