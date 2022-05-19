@@ -35,17 +35,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   let arrStatistics = []
   let historyLocalStorage = JSON.parse(localStorage.getItem('win'))
-  
-  for(let i = 0; i < historyLocalStorage.length; i++){
-    arrStatistics.push(historyLocalStorage[i])
-    if (historyLocalStorage[i] === 'X'){
-      document.getElementById(`item-${[i]}`).innerHTML = 'Player win : X '
-    } 
-    if (historyLocalStorage[i] === '0') {
-      document.getElementById(`item-${[i]}`).innerHTML = 'Player win : 0 '
-    }
-    if (historyLocalStorage[i] === 'Draw') {
-      document.getElementById(`item-${[i]}`).innerHTML = 'Draw game'
+
+  if(historyLocalStorage.length === null) {
+    for(let i = 0; i < historyLocalStorage.length; i++){
+      arrStatistics.push(historyLocalStorage[i])
+      if (historyLocalStorage[i] === 'X'){
+        document.getElementById(`item-${[i]}`).innerHTML = 'Player win : X '
+      } 
+      if (historyLocalStorage[i] === '0') {
+        document.getElementById(`item-${[i]}`).innerHTML = 'Player win : 0 '
+      }
+      if (historyLocalStorage[i] === 'Draw') {
+        document.getElementById(`item-${[i]}`).innerHTML = 'Draw game'
+      }
     }
   }
 
